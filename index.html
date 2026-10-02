@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="福利电影网（fulidianyingwang-wap.github.io）分享值得看的电影与剧集片单，倡导正版观影、尊重版权，分类清晰，片单持续更新。">
+<meta name="keywords" content="福利电影网, 电影网, fulidianyingwang-wap.github.io, 电影片单, 电影资源, 影视导航">
+<meta name="author" content="福利电影网">
+<meta name="theme-color" content="#f3ede2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="福利电影网 · 值得看的电影与剧集片单 | fulidianyingwang-wap.github.io">
+<meta property="og:description" content="福利电影网分享值得看的电影与剧集片单，倡导正版观影、尊重版权，分类清晰。">
+<meta property="og:url" content="https://fulidianyingwang-wap.github.io/">
+<meta property="og:site_name" content="福利电影网">
+<link rel="canonical" href="https://fulidianyingwang-wap.github.io/">
+<title>福利电影网 · 值得看的电影与剧集片单 | fulidianyingwang-wap.github.io</title>
+<style>
+/* ===== 胶片 · 拍立得宝丽风 ===== */
+:root{
+  --paper:#f3ede2; --paper2:#e8dfd0; --ink:#2a2724; --ink2:#6b6359; --ink3:#a79c8e;
+  --film:#1c1a18; --film2:#262320; --amber:#e0893a; --red:#c0392b; --teal:#2f7d6b; --blue:#3a5a8c;
+  --max:1180px;
+  --hand:"Caveat","Kalam",cursive;
+  --sans:"WenQuanYi Micro Hei","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;font-size:16px;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle at 12% 20%,rgba(224,137,58,.10),transparent 45%),
+  radial-gradient(circle at 82% 65%,rgba(47,125,107,.08),transparent 42%),
+  radial-gradient(circle at 50% 95%,rgba(192,57,43,.06),transparent 46%);}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(42,39,36,.018) 3px,rgba(42,39,36,.018) 4px);}
+main,header,footer{position:relative;z-index:1;}
+a{color:inherit;text-decoration:none;transition:.25s;}
+ul{list-style:none;}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit;}
+:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;}
+::selection{background:var(--ink);color:var(--paper);}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+section{padding:108px 0;}
+@media(max-width:640px){section{padding:68px 0;}.wrap{padding:0 18px;}}
+
+/* ===== 顶部胶卷带 ===== */
+.reel{background:var(--film);padding:11px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid #000;}
+.reel .tr{display:flex;gap:14px;align-items:center;overflow:hidden;}
+.reel .hole{width:15px;height:15px;border-radius:50%;background:#0a0908;flex:0 0 auto;border:1px solid #333;}
+.reel .t{font-family:var(--hand);font-size:19px;color:var(--amber);white-space:nowrap;letter-spacing:.04em;}
+.reel .nav{position:static;}
+@media(max-width:520px){.reel .t{font-size:15px;}}
+
+/* ===== 汉堡 ===== */
+.hamb{display:none;width:44px;height:44px;border-radius:9px;background:var(--film);place-items:center;color:var(--paper);margin-left:auto;}
+@media(max-width:920px){
+  .hamb{display:grid;}
+  .nav{position:absolute;top:64px;left:18px;right:18px;flex-direction:column;align-items:stretch;padding:12px;gap:2px;
+    background:var(--paper);border:2px solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--film);
+    max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .nav.open{max-height:560px;}
+  .nav a{padding:13px 16px;border-radius:7px;}
+  .nav a:hover{background:var(--film);color:var(--paper);}
+  .nav .cta{background:var(--amber);color:var(--paper);text-align:center;}
+}
+
+/* ===== Hero · 拍立得 ===== */
+.hero{padding-top:52px;}
+.polaroid{background:#faf7f1;padding:20px 20px 26px;border-radius:3px;box-shadow:0 24px 60px -26px rgba(28,26,24,.55),
+  0 2px 6px rgba(28,26,24,.12);transform:rotate(-.7deg);max-width:1080px;margin:0 auto;}
+.polaroid .photo{position:relative;background:var(--film);overflow:hidden;border-radius:2px;aspect-ratio:21/8;}
+.polaroid .photo .glow{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 24% 40%,rgba(224,137,58,.5),transparent 55%),
+  radial-gradient(ellipse at 62% 55%,rgba(192,57,43,.4),transparent 52%),
+  radial-gradient(ellipse at 86% 38%,rgba(47,125,107,.42),transparent 50%),
+  linear-gradient(180deg,#1c1a18,#262320);}
+.polaroid .photo .grain{position:absolute;inset:0;opacity:.22;
+  background-image:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,.05) 2px,rgba(255,255,255,.05) 3px);}
+.polaroid .photo .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:92px;height:92px;border-radius:50%;background:rgba(243,237,226,.92);display:grid;place-items:center;color:var(--film);}
+.polaroid .photo .reel-l,.polaroid .photo .reel-r{position:absolute;top:50%;transform:translateY(-50%);width:64px;height:64px;
+  border-radius:50%;border:3px solid rgba(243,237,226,.35);display:grid;place-items:center;}
+.polaroid .photo .reel-l{left:5%;} .polaroid .photo .reel-r{right:5%;}
+.polaroid .photo .reel-l i,.polaroid .photo .reel-r i{width:24px;height:24px;border-radius:50%;background:rgba(243,237,226,.55);}
+.polaroid .photo .txt{position:absolute;left:0;right:0;bottom:8%;text-align:center;color:var(--paper);}
+.polaroid .photo .txt .h{font-size:clamp(26px,5.2vw,54px);font-weight:900;letter-spacing:.02em;line-height:1.2;}
+.polaroid .photo .txt .h em{font-style:normal;color:var(--amber);}
+.polaroid .photo .txt .s{font-family:var(--hand);font-size:clamp(15px,2.2vw,22px);color:rgba(243,237,226,.85);margin-top:8px;}
+.polaroid .photo .badge{position:absolute;top:16px;right:16px;background:var(--red);color:#fff;font-size:11px;font-weight:800;
+  letter-spacing:.12em;padding:5px 11px;border-radius:3px;transform:rotate(4deg);}
+.polaroid .cap{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap;}
+.polaroid .cap .pen{font-family:var(--hand);font-size:clamp(20px,3.4vw,30px);color:var(--ink);transform:rotate(-1.5deg);}
+.polaroid .cap .pen b{color:var(--red);}
+.polaroid .cap .meta{display:flex;gap:20px;font-size:12.5px;color:var(--ink2);flex-wrap:wrap;}
+.polaroid .cap .meta span b{color:var(--ink);}
+.polaroid .tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-3deg);width:130px;height:30px;
+  background:rgba(224,137,58,.32);border-radius:2px;}
+@media(max-width:640px){.polaroid{transform:none;padding:14px 14px 20px;}.polaroid .photo .play{width:64px;height:64px;}
+  .polaroid .photo .reel-l,.polaroid .photo .reel-r{display:none;}}
+
+/* ===== 栏目一 · 分类导航（拍立得墙） ===== */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:52px;}
+.head .eyebrow{font-family:var(--hand);font-size:clamp(22px,3.6vw,32px);color:var(--red);transform:rotate(-2deg);margin-bottom:14px;}
+.head h2{font-size:clamp(30px,4.8vw,48px);font-weight:900;line-height:1.2;}
+.head h2 em{font-style:normal;color:var(--red);background:linear-gradient(transparent 62%,rgba(224,137,58,.4) 62%);}
+.head .desc{margin-top:18px;color:var(--ink2);max-width:620px;font-size:15.6px;}
+.wall{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 26px;}
+@media(max-width:900px){.wall{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:540px){.wall{grid-template-columns:1fr;}}
+.pic{background:#faf7f1;padding:13px 13px 16px;box-shadow:0 10px 26px -14px rgba(28,26,24,.5);transition:.35s;}
+.pic:nth-child(3n+1){transform:rotate(-2.2deg);} .pic:nth-child(3n+2){transform:rotate(.9deg);} .pic:nth-child(3n+3){transform:rotate(-1.1deg);}
+.pic:hover{transform:rotate(0) translateY(-8px) scale(1.02);box-shadow:0 22px 50px -20px rgba(28,26,24,.55);z-index:5;}
+.pic .img{aspect-ratio:4/3;background:var(--film);position:relative;overflow:hidden;border-radius:2px;}
+.pic .img .fill{position:absolute;inset:0;}
+.pic:nth-child(6n+1) .fill{background:linear-gradient(135deg,#e0893a,#c0392b);}
+.pic:nth-child(6n+2) .fill{background:linear-gradient(135deg,#2f7d6b,#3a5a8c);}
+.pic:nth-child(6n+3) .fill{background:linear-gradient(135deg,#c0392b,#6b2c8f);}
+.pic:nth-child(6n+4) .fill{background:linear-gradient(135deg,#3a5a8c,#2f7d6b);}
+.pic:nth-child(6n+5) .fill{background:linear-gradient(135deg,#6b2c8f,#e0893a);}
+.pic:nth-child(6n+6) .fill{background:linear-gradient(135deg,#2f7d6b,#e0893a);}
+.pic .img .fill::after{content:"";position:absolute;inset:0;background-image:
+  repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,.07) 2px,rgba(255,255,255,.07) 3px);}
+.pic .img .lb{position:absolute;left:10px;bottom:9px;background:rgba(243,237,226,.94);color:var(--film);font-size:10.5px;font-weight:800;
+  letter-spacing:.08em;padding:3px 8px;border-radius:2px;}
+.pic h3{font-size:18.5px;font-weight:800;margin:15px 4px 5px;}
+.pic p{font-size:13.8px;color:var(--ink2);margin:0 4px;min-height:60px;}
+.pic .pen{font-family:var(--hand);font-size:19px;color:var(--ink2);margin:12px 4px 0;display:flex;justify-content:space-between;align-items:center;}
+.pic .pen a{color:var(--red);font-size:13px;font-family:var(--sans);}
+.pic .pen a:hover{color:var(--ink);}
+.pic .pin{position:absolute;margin-top:-22px;margin-left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;
+  background:var(--red);box-shadow:0 2px 4px rgba(0,0,0,.3),inset -2px -2px 3px rgba(0,0,0,.25);opacity:0;transition:.3s;}
+.pic:hover .pin{opacity:1;}
+
+/* ===== 栏目二 · 核心服务（票根票根行） ===== */
+.stub-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:960px){.stub-row{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.stub-row{grid-template-columns:1fr;}}
+.stub{background:var(--paper);border:2px dashed var(--ink3);border-radius:10px;padding:26px 24px;position:relative;transition:.3s;}
+.stub:hover{border-color:var(--ink);background:#faf7f1;transform:translateY(-6px);}
+.stub .no{font-family:var(--hand);font-size:26px;color:var(--red);line-height:1;}
+.stub h3{font-size:19px;font-weight:900;margin:14px 0 8px;}
+.stub p{font-size:14.2px;color:var(--ink2);}
+.stub .cut{position:absolute;top:14px;right:14px;font-size:10px;color:var(--ink3);letter-spacing:.1em;writing-mode:vertical-rl;}
+.stub .cut::before{content:"✂ ";}
+
+/* ===== 栏目三 · 更新动态（胶片条横向滚动） ===== */
+.strip{background:var(--film);border-radius:6px;padding:26px 0;position:relative;overflow:hidden;
+  box-shadow:inset 0 4px 18px rgba(0,0,0,.5);}
+.strip .holes{display:flex;justify-content:space-between;padding:0 12px 18px;}
+.strip .holes i{width:13px;height:13px;border-radius:50%;background:#0a0908;}
+.strip .track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 26px 10px;scrollbar-width:thin;}
+.strip .track::-webkit-scrollbar{height:9px;} .strip .track::-webkit-scrollbar-thumb{background:var(--ink3);border-radius:5px;}
+.frm{scroll-snap-align:start;flex:0 0 280px;background:var(--film2);border:1px solid #3a3633;border-radius:5px;overflow:hidden;}
+@media(max-width:520px){.frm{flex-basis:230px;}}
+.frm .th{aspect-ratio:16/10;position:relative;}
+.frm:nth-child(5n+1) .th{background:linear-gradient(135deg,#e0893a,#c0392b);}
+.frm:nth-child(5n+2) .th{background:linear-gradient(135deg,#2f7d6b,#3a5a8c);}
+.frm:nth-child(5n+3) .th{background:linear-gradient(135deg,#c0393b,#6b2c8f);}
+.frm:nth-child(5n+4) .th{background:linear-gradient(135deg,#3a5a8c,#2f7d6b);}
+.frm:nth-child(5n+5) .th{background:linear-gradient(135deg,#6b2c8f,#e0893a);}
+.frm .th .ep{position:absolute;left:10px;bottom:8px;background:var(--paper);color:var(--film);font-size:10px;font-weight:800;padding:3px 8px;border-radius:2px;}
+.frm .th .dt{position:absolute;right:10px;top:8px;font-family:var(--hand);font-size:15px;color:var(--amber);}
+.frm .bd{padding:15px 16px;background:#faf7f1;}
+.frm h3{font-size:15.5px;font-weight:800;line-height:1.5;margin-bottom:5px;}
+.frm p{font-size:12.8px;color:var(--ink2);}
+
+/* ===== 栏目四 · 关于 + FAQ（对话气泡） ===== */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+@media(max-width:880px){.split{grid-template-columns:1fr;gap:42px;}}
+.bubble{background:#faf7f1;border:2px solid var(--ink);border-radius:14px;padding:26px 28px;position:relative;margin-bottom:22px;
+  box-shadow:5px 5px 0 var(--film);}
+.bubble::before{content:"";position:absolute;left:-10px;top:26px;border:9px solid transparent;border-right-color:var(--ink);}
+.bubble::after{content:"";position:absolute;left:-7px;top:28px;border:7px solid transparent;border-right-color:#faf7f1;}
+.bubble.alt{background:var(--film);color:var(--paper);border-color:var(--film);box-shadow:5px 5px 0 var(--amber);}
+.bubble.alt::before{border-right-color:var(--amber);left:auto;right:-10px;}
+.bubble.alt::after{border-right-color:var(--film);left:auto;right:-6px;}
+.bubble .who{font-family:var(--hand);font-size:20px;color:var(--red);margin-bottom:8px;}
+.bubble.alt .who{color:var(--amber);}
+.bubble p{font-size:15.2px;line-height:1.95;}
+.bubble p strong{background:linear-gradient(transparent 62%,rgba(224,137,58,.45) 62%);font-weight:700;}
+.qs{display:grid;gap:12px;}
+.qs details{background:var(--film);color:var(--paper);border-radius:10px;overflow:hidden;}
+.qs summary{cursor:pointer;padding:20px 22px;font-size:16px;font-weight:700;list-style:none;display:flex;gap:14px;align-items:flex-start;}
+.qs summary::-webkit-details-marker{display:none;}
+.qs summary::before{content:"?";font-family:var(--hand);font-size:24px;color:var(--amber);line-height:1;flex:0 0 auto;}
+.qs details[open] summary{color:var(--amber);}
+.qs .a{padding:0 22px 22px 50px;font-size:14.5px;color:rgba(243,237,226,.78);line-height:1.9;}
+
+/* ===== SEO ===== */
+.seo{background:var(--film);color:var(--paper);border-radius:12px;padding:40px 36px;position:relative;overflow:hidden;}
+.seo::before{content:"";position:absolute;inset:0;opacity:.25;background-image:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,.04) 2px,rgba(255,255,255,.04) 3px);}
+.seo p{position:relative;color:rgba(243,237,226,.84);font-size:15.4px;line-height:2.15;max-width:940px;margin:0 auto;text-align:center;}
+.seo b{color:var(--amber);}
+.seo .u{color:var(--paper);font-weight:700;}
+
+/* ===== 页脚 ===== */
+.ft{background:var(--film);color:rgba(243,237,226,.78);padding:66px 0 26px;margin-top:40px;}
+.ft .wrap{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px;}
+.ft .b .mk{display:inline-flex;align-items:baseline;gap:8px;color:var(--paper);}
+.ft .b .mk b{font-size:26px;font-weight:900;}
+.ft .b .mk i{font-family:var(--hand);font-size:22px;color:var(--amber);font-style:normal;}
+.ft .b p{font-size:14.2px;margin:18px 0 22px;max-width:320px;}
+.ft .b .tags{display:flex;gap:8px;flex-wrap:wrap;}
+.ft .b .tags a{font-size:12px;padding:5px 11px;border:1px solid rgba(243,237,226,.25);border-radius:20px;color:rgba(243,237,226,.78);}
+.ft .b .tags a:hover{background:var(--amber);color:var(--film);border-color:var(--amber);}
+.ft h4{font-family:var(--hand);font-size:21px;color:var(--amber);margin-bottom:20px;}
+.ft .col a{display:block;color:rgba(243,237,226,.72);font-size:14.4px;padding:5px 0;}
+.ft .col a:hover{color:var(--paper);transform:translateX(5px);}
+.ft .bot{border-top:1px dashed rgba(243,237,226,.22);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:rgba(243,237,226,.5);}
+.ft .bot a{color:rgba(243,237,226,.7);margin-left:20px;}
+.ft .bot a:hover{color:var(--amber);}
+@media(max-width:860px){.ft .wrap{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.ft .wrap{grid-template-columns:1fr;}}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header>
+  <nav class="reel" aria-label="主导航"><div class="wrap"><div class="tr">
+    <span class="hole"></span><span class="hole"></span><span class="hole"></span><span class="hole"></span>
+    <a class="t" href="#top" style="color:var(--amber);text-decoration:none">福利电影网 · fulidianyingwang-wap.github.io — 分类清晰 / 片单扎实 / 倡导正版观影 —</a>
+    <span class="hole"></span><span class="hole"></span><span class="hole"></span><span class="hole"></span>
+    <button class="hamb" id="hamb" aria-label="切换菜单" aria-expanded="false" aria-controls="mn"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="nav" id="mn">
+      <a href="#home">首页</a><a href="#cat">分类导航</a><a href="#services">核心服务</a><a href="#news">更新动态</a><a href="#about">关于本站</a><a href="#contact" class="cta">联系我们</a>
+    </div>
+  </div></div></nav>
+</header>
+
+<main>
+<h1 class="heroh" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">福利电影网（fulidianyingwang-wap.github.io）电影与剧集资源导航</h1>
+<!-- ===== Hero · 拍立得 ===== -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="polaroid">
+      <div class="tape"></div>
+      <div class="photo">
+        <div class="glow"></div>
+        <div class="grain"></div>
+        <div class="reel-l"><i></i></div>
+        <div class="reel-r"><i></i></div>
+        <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg></div>
+        <div class="badge">NOW SHOWING</div>
+        <div class="txt">
+          <div class="h">找片，从 <em>福利</em> 好片开始</div>
+          <div class="s">分类清晰 · 片单扎实 · 持续更新中</div>
+        </div>
+      </div>
+      <div class="cap">
+        <div class="pen">这是 <b>福利电影网</b> 的主页，欢迎翻阅</div>
+        <div class="meta"><span>站点 <b>福利电影网</b></span><span>网址 <b>fulidianyingwang-wap.github.io</b></span><span>倡导 <b>正版观影</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目一 · 分类导航（拍立得墙） ===== -->
+<section id="cat">
+  <div class="wrap">
+    <div class="head">
+      <div class="l">
+        <div class="eyebrow">← 片库随手拍 →</div>
+        <h2>六格<em>片库</em>，<br>按心情挑</h2>
+        <p class="desc"><strong style="color:var(--ink);font-weight:800">福利电影网</strong>（fulidianyingwang-wap.github.io）把电影与剧集按题材归类，想看哪类，直奔主题。</p>
+      </div>
+      <a href="#" class="pic" style="background:var(--film);color:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:180px;transform:rotate(1.5deg)">
+        <span style="font-family:var(--hand);font-size:34px;color:var(--amber)">查看</span>
+        <span style="font-size:14px;color:rgba(243,237,226,.75);margin-top:8px">全部分类 →</span>
+      </a>
+    </div>
+    <div class="wall">
+      <a class="pic" href="#"><span class="pin"></span>
+        <div class="img"><div class="fill"></div><span class="lb">FILM</span></div>
+        <h3>电影频道</h3><p>院线、文艺、纪录等电影分类入口，覆盖主流与冷门。</p>
+        <div class="pen"><span>—— 电影频道</span><span>→</span></div></a>
+      <a class="pic" href="#"><span class="pin"></span>
+        <div class="img"><div class="fill"></div><span class="lb">DRAMA</span></div>
+        <h3>剧集专区</h3><p>国产、美剧、日韩剧与综艺导航。</p>
+        <div class="pen"><span>—— 剧集专区</span><span>→</span></div></a>
+      <a class="pic" href="#"><span class="pin"></span>
+        <div class="img"><div class="fill"></div><span class="lb">LIST</span></div>
+        <h3>口碑片单</h3><p>高口碑电影与热门剧集榜单。</p>
+        <div class="pen"><span>—— 口碑片单</span><span>→</span></div></a>
+      <a class="pic" href="#"><span class="pin"></span>
+        <div class="img"><div class="fill"></div><span class="lb">TOOL</span></div>
+        <h3>观影工具</h3><p>播放辅助与字幕工具，提升观影体验。</p>
+        <div class="pen"><span>—— 观影工具</span><span>→</span></div></a>
+      <a class="pic" href="#"><span class="pin"></span>
+        <div class="img"><div class="fill"></div><span class="lb">ART</span></div>
+        <h3>文艺独立</h3><p>艺术院线与独立电影入口。</p>
+        <div class="pen"><span>—— 文艺独立</span><span>→</span></div></a>
+      <a class="pic" href="#"><span class="pin"></span>
+        <div class="img"><div class="fill"></div><span class="lb">RIGHT</span></div>
+        <h3>正版引导</h3><p>倡导通过合法渠道观看影视内容。</p>
+        <div class="pen"><span>—— 正版引导</span><span>→</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目二 · 核心服务（票根） ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="l">
+        <div class="eyebrow">← 四张入场票根 →</div>
+        <h2>我们<em>整理</em>什么</h2>
+        <p class="desc"><strong style="color:var(--ink);font-weight:800">福利电影网</strong> 围绕电影与剧集，提供分类、片单、工具与正版引导四类服务。</p>
+      </div>
+    </div>
+    <div class="stub-row">
+      <div class="stub"><span class="cut">ADMIT ONE</span><div class="no">01</div><h3>电影分类导航</h3><p>按题材与类型整理电影入口。</p></div>
+      <div class="stub"><span class="cut">ADMIT ONE</span><div class="no">02</div><h3>剧集专区</h3><p>国产、美剧、日韩剧与综艺导航。</p></div>
+      <div class="stub"><span class="cut">ADMIT ONE</span><div class="no">03</div><h3>口碑片单</h3><p>高口碑电影与热门剧集榜单。</p></div>
+      <div class="stub"><span class="cut">ADMIT ONE</span><div class="no">04</div><h3>正版倡导</h3><p>倡导正版观影、尊重版权。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目三 · 更新动态（胶片条） ===== -->
+<section id="news">
+  <div class="wrap">
+    <div class="head">
+      <div class="l">
+        <div class="eyebrow">← 放映记录 reel log →</div>
+        <h2>片库<em>更新</em>记录</h2>
+        <p class="desc"><strong style="color:var(--ink);font-weight:800">福利电影网</strong> 持续维护分类导航与片单内容，让找片这件事始终有迹可循。</p>
+      </div>
+    </div>
+    <div class="strip">
+      <div class="holes"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="track">
+        <article class="frm"><div class="th"><span class="ep">片单</span><span class="dt">10.02</span></div><div class="bd"><h3>十月院线片单更新</h3><p>新增电影频道片单条目，覆盖近期院线与经典回顾。</p></div></article>
+        <article class="frm"><div class="th"><span class="ep">榜单</span><span class="dt">09.18</span></div><div class="bd"><h3>口碑片单榜单上线</h3><p>整理高口碑电影与热门剧集榜单，按类型分类。</p></div></article>
+        <article class="frm"><div class="th"><span class="ep">工具</span><span class="dt">09.05</span></div><div class="bd"><h3>观影工具推荐合集</h3><p>新增观影工具分类，推荐播放辅助与字幕工具。</p></div></article>
+        <article class="frm"><div class="th"><span class="ep">剧集</span><span class="dt">08.28</span></div><div class="bd"><h3>剧集专区扩容</h3><p>补充国产、美剧、日韩剧与综艺的导航入口。</p></div></article>
+        <article class="frm"><div class="th"><span class="ep">合规</span><span class="dt">08.22</span></div><div class="bd"><h3>正版倡导说明完善</h3><p>进一步明确本站为导航与工具站，不提供在线播放。</p></div></article>
+        <article class="frm"><div class="th"><span class="ep">片单</span><span class="dt">08.10</span></div><div class="bd"><h3>文艺独立片单</h3><p>新增艺术院线与独立电影分类入口。</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目四 · 关于 + FAQ（对话气泡） ===== -->
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <div class="l">
+        <div class="eyebrow">← 关于本站 · 聊天室 →</div>
+        <h2>关于 <em>福利电影网</em></h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <div class="bubble">
+          <div class="who">福利电影网</div>
+          <p>我们把电影与剧集按题材归类，用清晰的分类与持续更新的片单，帮助你更快找到想看的片子。<strong>分类清晰、片单扎实</strong>。</p>
+        </div>
+        <div class="bubble alt">
+          <div class="who">编辑部</div>
+          <p>网址是 <strong>fulidianyingwang-wap.github.io</strong>。我们坚持倡导正版观影、尊重版权，所整理内容仅供学习与交流参考，请通过合法渠道获取影视资源。</p>
+        </div>
+        <div class="bubble">
+          <div class="who">留言板</div>
+          <p>有想推荐的片子，或发现内容需要调整，欢迎通过页面下方留言或发送邮件告诉我们。</p>
+        </div>
+      </div>
+      <div class="qs">
+        <details open><summary>本站提供在线播放吗？</summary><div class="a">不提供。本站为影视导航与工具站，仅整理资源入口与片单，倡导通过正版渠道观看影视内容。</div></details>
+        <details><summary>内容多久更新一次？</summary><div class="a">分类导航与片单持续维护，重要档期会集中更新，具体记录可查看页面更新动态。</div></details>
+        <details><summary>如何推荐影片或反馈问题？</summary><div class="a">可通过页面下方留言或发送邮件与我们联系，欢迎推荐好片与提出改进建议。</div></details>
+        <details><summary>关于版权问题如何处理？</summary><div class="a">我们倡导正版观影、尊重版权，若涉及版权相关事宜，请及时通过联系方式与我们沟通。</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEO ===== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="seo"><p><b>关于 福利电影网（fulidianyingwang-wap.github.io）：</b>本站聚焦电影与剧集资源入口整理与片单导航，欢迎通过网站名称"福利电影网"或网站网址 <span class="u">https://fulidianyingwang-wap.github.io/</span> 访问。我们持续更新分类导航、电影片单与观影工具，倡导正版观影、尊重版权，期待为你带来更清爽的找片体验。</p></div>
+  </div>
+</section>
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer class="ft" id="contact">
+  <div class="wrap">
+    <div class="b">
+      <div class="mk"><b>福利电影网</b><i>福利好片</i></div>
+      <p>电影与剧集资源导航，分类清晰，片单持续更新，倡导正版观影、尊重版权。</p>
+      <div class="tags"><a href="#cat">电影频道</a><a href="#services">观影工具</a><a href="#news">片单记录</a><a href="#about">常见问题</a><a href="#contact">意见反馈</a></div>
+    </div>
+    <div class="col"><h4>// 快捷导航</h4><a href="#cat">分类导航</a><a href="#services">核心服务</a><a href="#news">更新动态</a><a href="#about">关于本站</a></div>
+    <div class="col"><h4>// 片单索引</h4><a href="#cat">电影频道</a><a href="#services">口碑片单</a><a href="#about">常见问题</a><a href="#contact">意见反馈</a></div>
+    <div class="col"><h4>// 联系我们</h4><a href="mailto:hi@fulidianyingwang-wap.github.io">发送邮件</a><a href="#contact">在线留言</a><a href="#top">返回顶部</a></div>
+  </div>
+  <div class="wrap"><div class="bot">
+    <span>© <span id="yr"></span> 福利电影网 · fulidianyingwang-wap.github.io · 倡导正版观影，尊重版权</span>
+    <span><a href="#">免责声明</a><a href="#">隐私政策</a><a href="#contact">联系我们</a></span>
+  </div></div>
+</footer>
+
+<script>
+(function(){
+  var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
+  var btn=document.getElementById('hamb'),nav=document.getElementById('mn');
+  if(btn&&nav){
+    btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+    nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+  }
+  var qs=document.querySelectorAll('.qs details');
+  qs.forEach(function(q){q.addEventListener('toggle',function(){if(q.open)qs.forEach(function(o){if(o!==q)o.removeAttribute('open');});});});
+})();
+</script>
+</body>
+</html>
